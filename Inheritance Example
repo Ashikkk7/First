@@ -1,0 +1,87 @@
+package lab24;
+
+import java.util.Scanner;
+
+class Employee {
+    String name, address;
+    int age, salary;
+    long phoneNumber;
+
+    void printEmployee() {
+        System.out.println("Employee Name : " + name);
+        System.out.println("Employee Age : " + age);
+        System.out.println("Employee Phone Number : " + phoneNumber);
+        System.out.println("Employee Address : " + address);
+    }
+
+    void printSalary() {
+        System.out.println("Salary = " + salary);
+    }
+}
+
+class Officer extends Employee {
+    String specialization;
+
+    void printSpecialization() {
+        System.out.println("Officer Specialization : " + specialization);
+    }
+}
+
+class Manager extends Employee {
+    String department;
+
+    void printDepartment() {
+        System.out.println("Manager Department : " + department);
+    }
+}
+
+public class InheritanceExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        Officer of = new Officer();
+        Manager mn = new Manager();
+
+        System.out.println("Enter Officer details");
+        System.out.print("Enter Officer Name: ");
+        of.name = sc.nextLine();
+        System.out.print("Enter Officer Address: ");
+        of.address = sc.nextLine();
+        System.out.print("Enter Officer Age: ");
+        of.age = sc.nextInt();
+        System.out.print("Enter Officer Phone Number: ");
+        of.phoneNumber = sc.nextLong();
+        System.out.print("Enter Officer Salary: ");
+        of.salary = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Officer Specialization: ");
+        of.specialization = sc.nextLine();
+
+        System.out.println("\nEnter Manager details");
+        System.out.print("Enter Manager Name: ");
+        mn.name = sc.nextLine();
+        System.out.print("Enter Manager Address: ");
+        mn.address = sc.nextLine();
+        System.out.print("Enter Manager Age: ");
+        mn.age = sc.nextInt();
+        System.out.print("Enter Manager Phone Number: ");
+        mn.phoneNumber = sc.nextLong();
+        System.out.print("Enter Manager Salary: ");
+        mn.salary = sc.nextInt();
+        sc.nextLine(); 
+        System.out.print("Enter Manager Department: ");
+        mn.department = sc.nextLine();
+
+        sc.close();
+
+        System.out.println("\nOfficer Details:");
+        of.printEmployee();
+        of.printSalary();
+        of.printSpecialization();
+
+        System.out.println("\nManager Details:");
+        mn.printEmployee();
+        mn.printSalary();
+        mn.printDepartment();
+    }
+}
