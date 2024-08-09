@@ -1,0 +1,38 @@
+package lab24;
+import java.util.*;
+public class OverloadExample {
+	public float Area(float a,float b) {
+		return  (a*b)/2;
+	}
+	public int Area(int a,int b) {
+		return a*b;
+	}
+	public double Area(double a) {
+		return 3.14*a*a ;
+	}
+	public static void main(String args[]) {
+		Scanner sc= new Scanner(System.in);
+		OverloadExample obj=new OverloadExample();
+		System.out.println("Enter the base of the triangle : ");
+		float th=sc.nextFloat();
+		System.out.println("Enter the height of the triangle : ");
+		float tb=sc.nextFloat();
+		
+		System.out.println("Enter the base of the Reactangle : ");
+		int rb=sc.nextInt();
+		System.out.println("Enter the height of the Recatangle: ");
+		int rh=sc.nextInt();
+		
+		System.out.println("Enter the radius of the Circle : ");
+		double cr=sc.nextDouble();
+		
+		float TR=obj.Area(tb,th);
+		System.out.println("Area :"+TR);
+		
+		int RR=obj.Area(rh, rb);
+		System.out.println("Area :"+RR);
+		
+		double CR=obj.Area(RR);
+		System.out.println("Area :"+CR);
+	}
+}
